@@ -9,6 +9,16 @@
     <script src="vue.css"></script>
 </head>
 <body>
+    <div id="app">
+        <h1 v-html='sitename'></h1>
+        <img v-bind:src='product.image' width="100" height="100">
+        <h2 v-html='product.subject'></h2>
+        <p v-text='product.location'></p>
+        <p>Price: {{product.price}}</p>
+        <p>Number of spaces: {{product.numberofspaces}}</p>
+        <button @click='product.numberofspaces -= 1' v-if="canAddToCart">Add to Cart</button>
+        <button disabled='disabled' v-else>Add to Cart</button>
+    </div>
     
 </body>
 </html>

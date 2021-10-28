@@ -23,7 +23,22 @@
 
     <script>
         let webstore = new Vue ({
-            
+            el: '#app',
+            data: {
+                sitename: '<strong>After School Club</strong>',
+                product: {
+                    image: "product.png",
+                    subject: "<strong>Math</strong>",
+                    location: "London",
+                    price: 100,
+                    numberofspaces: 5
+                }
+            },
+            computed: {
+                canAddToCart() {
+                    return this.product.numberofspaces > 0
+                }
+            }
         })
     </script>
 </body>

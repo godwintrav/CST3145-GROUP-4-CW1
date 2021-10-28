@@ -6,18 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Group 4 Coursework 1</title>
     <script src="https://unpkg.com/vue"></script>
-    <script src="vue.css"></script>
+    <link rel="stylesheet" href="vue.css">
 </head>
 <body>
     <div id="app">
         <h1 v-html='sitename'></h1>
-        <img v-bind:src='product.image' width="100" height="100">
-        <h2 v-html='product.subject'></h2>
-        <p v-text='product.location'></p>
-        <p>Price: {{product.price}}</p>
-        <p>Number of spaces: {{product.numberofspaces}}</p>
-        <button @click='product.numberofspaces -= 1' v-if="canAddToCart">Add to Cart</button>
-        <button disabled='disabled' v-else>Add to Cart</button>
+        <div class="children">
+            <img v-bind:src='product.image' width="200" height="200">
+        </div>
+        <div class="children">
+            <h2 v-html='product.subject'></h2>
+            <p v-text='product.location'></p>
+            <p>Price: {{product.price}}</p>
+            <p>Number of spaces: {{product.numberofspaces}}</p>
+            <button @click='product.numberofspaces -= 1' v-if="canAddToCart">Add to Cart</button>
+            <button disabled='disabled' v-else>Add to Cart</button>
+        </div>
     </div>
 
 
